@@ -1,13 +1,15 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-
 import {connectDB} from './db'
+import { userRouter } from "./controller/user.controller";
 
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT || 3000;
 
+
+app.use('/api/v1/user',userRouter)
 // connecting to database
 connectDB();
 
