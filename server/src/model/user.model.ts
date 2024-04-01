@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema<UserType>({
     required: [true, 'Please provide an email address'],
     unique: true,
     trim: true,
+    
   },
   phoneNo: {
     type: String,
@@ -34,5 +35,6 @@ const userSchema = new mongoose.Schema<UserType>({
   },
   // Add other fields as needed (e.g., role, profile picture)
 });
+
 
 export const userModel = mongoose.model<UserType>('User', userSchema);
